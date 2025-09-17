@@ -11,7 +11,7 @@
 
     <style>
         body {
-            background: #f8f9fa;
+              background-image: url(img.jpg);
         }
         .card {
             border-radius: 1rem;
