@@ -1,9 +1,11 @@
-FROM tomcat:10.1-jdk17
+FROM tomcat:9.0
 
-# WAR file को Tomcat के webapps folder में copy करो
-COPY WordSculptor.war /usr/local/tomcat/webapps/WordSculptor.war
+# Default ROOT webapp हटाते हैं
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Render को बताओ कि यह पोर्ट use होगा
+# अपना ROOT.war Tomcat के webapps में डालते हैं
+COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
+
 EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
